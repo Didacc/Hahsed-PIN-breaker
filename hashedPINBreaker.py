@@ -20,34 +20,23 @@ args = parser.parse_args()
 
 pinHashed = args.hashedPIN
 
-if args.salt:
-	saltHashed = args.salt
+saltHashed = args.salt
 
-	for i in range(0,10):
-		for j in range(0,10):
-			for z in range(0,10):
-				for c in range(0,10):
-					
+for i in range(0,10):
+	for j in range(0,10):
+		for z in range(0,10):
+			for c in range(0,10):
+				
+				if args.salt:
 					toHash = saltHashed + str(i) + str(j) + str(z) + str(c)
-					toHash = bytes(toHash, 'utf-8')				
-
-					if SHA256.new(toHash).hexdigest() == pinHashed:
-						print(colored("\n[*]The pin is: " + str(i) + str(j) + str(z) + str(c) + '\n','blue'))
-						sys.exit(0)
-
-else:
-	for i in range(0,10):
-		for j in range(0,10):
-			for z in range(0,10):
-				for c in range(0,10):
-					
+				else:
 					toHash = str(i) + str(j) + str(z) + str(c)
-					toHash = bytes(toHash, 'utf-8')				
+				toHash = bytes(toHash, 'utf-8')				
 
-					if SHA256.new(toHash).hexdigest() == pinHashed:
-						print(colored("\n[*]The pin is: " + str(i) + str(j) + str(z) + str(c) + '\n','blue'))
-						sys.exit(0)
-
+				if SHA256.new(toHash).hexdigest() == pinHashed:
+					print(colored("\n[*]The pin is: " + str(i) + str(j) + str(z) + str(c) + '\n','blue'))
+					sys.exit(0)
+					
 print(colored("\n[!]No valid hashed PIN found\n",'red'))
 sys.exit(1)
 
