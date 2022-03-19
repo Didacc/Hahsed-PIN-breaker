@@ -1,7 +1,7 @@
 # 4-digit hashed PIN breaker
 
 ### Usage:
-sha256.py [-h] [-s] hashedPIN
+hashedPINBreaker.py [-h] [-s] hashedPIN
 
 positional arguments:
   hashedPIN             The PIN hashed in SHA256 that you want to break.
