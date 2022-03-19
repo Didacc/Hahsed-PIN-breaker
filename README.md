@@ -7,5 +7,5 @@ positional arguments:
   hashedPIN             The PIN hashed in SHA256 that you want to break.
 
 optional arguments: <br />
-  -h, --help            show this help message and exit
-  -s, --salt            The salt added at the beginning already hashed in SHA256
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-h, --help            show this help message and exit
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-s, --salt            The salt added at the beginning already hashed in SHA256
